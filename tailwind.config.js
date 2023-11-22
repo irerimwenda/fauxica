@@ -13,8 +13,26 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+                poppins: ['Poppins', 'sans-serif'],
+                playfair: ['Playfair Display', 'sans-serif'],
             },
+            container: {
+                center: true,
+                screens: {
+                    sm: '540px',
+                    md: '720px',
+                    lg: '960px',
+                    xl: '1140px',
+                    '2xl': '1320px',
+                },
+                padding: {
+                    DEFAULT: '1.25rem',
+                },
+            },
+            colors: {
+                'white': '#ffffff',
+                'black': '#000000',
+            }
         },
     },
 
