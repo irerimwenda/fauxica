@@ -32,6 +32,15 @@ export default {
             colors: {
                 'white': '#ffffff',
                 'black': '#000000',
+                primary: {
+                    100: '#F1E2D1',
+                    200: '#F3D9BB17'
+                }
+            },
+            backgroundImage: {
+                'sport-shoe': "url('/images/sport_shoe.png')",
+                socks: "url('/images/socks.png')",
+                handbag: "url('/images/handbag.png')",
             }
         },
     },
