@@ -8,6 +8,7 @@ export default {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
         './resources/js/**/*.vue',
+        './resources/js/**/*.vue',
     ],
 
     theme: {
@@ -41,6 +42,7 @@ export default {
                 'sport-shoe': "url('/images/sport_shoe.png')",
                 socks: "url('/images/socks.png')",
                 handbag: "url('/images/handbag.png')",
+                'auth-banner': "url('/images/auth_banner.jpg')",
             }
         },
     },

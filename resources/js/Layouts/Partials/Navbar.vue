@@ -14,10 +14,10 @@ import { Link } from '@inertiajs/vue3';
 
             <ul>
                 <li class="flex items-center gap-x-16">
-                    <Link class="uppercase hover:underline underline-offset-8">Home</Link>
+                    <Link class="uppercase hover:underline underline-offset-8" :href="route('home')">Home</Link>
                     <Link class="uppercase hover:underline underline-offset-8">Products</Link>
-                    <Link class="uppercase hover:underline underline-offset-8">Gallery</Link>
-                    <Link class="uppercase hover:underline underline-offset-8">Contact Us</Link>
+                    <Link class="uppercase hover:underline underline-offset-8" :href="route('login')">Log In</Link>
+                    <Link class="uppercase hover:underline underline-offset-8" :href="route('register')">Sign Up</Link>
                 </li>
             </ul>
         </div>

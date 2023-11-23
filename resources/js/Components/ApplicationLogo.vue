@@ -1,3 +1,7 @@
+<script setup>
+import { Link } from '@inertiajs/vue3';
+</script>
+
 <template>
-    <h5 class="font-bold text-2xl text-black w-full font-playfair">FAUXICA SHOP</h5>
+    <Link class="font-bold text-2xl text-black w-full font-playfair" :href="route('home')">FAUXICA SHOP</Link>
 </template>

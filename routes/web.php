@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\HomePageController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -16,14 +16,9 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/', [HomePageController::class, 'index'])->name('home');
+Route::get('/two-factor', [HomePageController::class, 'twoFactor'])->name('two-factor');
+Route::get('/verify-otp', [HomePageController::class, 'verifyOtp'])->name('verify-otp');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
