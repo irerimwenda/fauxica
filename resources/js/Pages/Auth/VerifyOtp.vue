@@ -1,5 +1,9 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
+import {Head, Link, router} from '@inertiajs/vue3';
+
+const submit = () => {
+    router.get(route('dashboard'))
+};
 </script>
 
 <template>
@@ -16,7 +20,7 @@ import { Head, Link } from '@inertiajs/vue3';
                         </div>
 
                         <div class="flex flex-col justify-center mb-8">
-                            <form action="" method="post">
+                            <form @submit.prevent="submit">
                                 <div class="flex flex-col mb-16">
                                     <div class="flex flex-row items-center justify-between mx-auto w-full max-w-xs">
                                         <div class="w-16 h-16 ">

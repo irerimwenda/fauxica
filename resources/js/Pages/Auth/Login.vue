@@ -5,7 +5,7 @@ import Checkbox from '@/Components/Checkbox.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import {Head, Link, router, useForm} from '@inertiajs/vue3';
 
 defineProps({
     canResetPassword: {
@@ -17,15 +17,16 @@ defineProps({
 });
 
 const form = useForm({
-    email: '',
+    phone_number: '',
     password: '',
     remember: false,
 });
 
 const submit = () => {
-    form.post(route('login'), {
-        onFinish: () => form.reset('password'),
-    });
+    router.get(route('two-factor'))
+    // form.post(route('login'), {
+    //     onFinish: () => form.reset('password'),
+    // });
 };
 </script>
 
@@ -47,20 +48,20 @@ const submit = () => {
 
             <form @submit.prevent="submit">
                 <div>
-                    <InputLabel for="email" value="Email" />
+                    <InputLabel for="phone_number" value="Phone Number" />
 
                     <TextInput
-                        id="email"
-                        type="email"
+                        id="phone_number"
+                        type="text"
                         class="mt-1 block w-full"
-                        v-model="form.email"
+                        v-model="form.phone_number"
                         required
                         autofocus
-                        autocomplete="email"
-                        placeholder="Enter your email address"
+                        autocomplete="phone_number"
+                        placeholder="Enter your phone number"
                     />
 
-                    <InputError class="mt-2" :message="form.errors.email" />
+                    <InputError class="mt-2" :message="form.errors.phone_number" />
                 </div>
 
                 <div class="mt-4">

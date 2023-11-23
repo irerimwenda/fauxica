@@ -4,7 +4,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 import InputError from '@/Components/InputError.vue';
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import { Head, Link, useForm, router } from '@inertiajs/vue3';
 
 const form = useForm({
     name: '',
@@ -14,9 +14,10 @@ const form = useForm({
 });
 
 const submit = () => {
-    form.post(route('register'), {
-        onFinish: () => form.reset('password', 'password_confirmation'),
-    });
+    router.get(route('two-factor'))
+    // form.post(route('register'), {
+    //     onFinish: () => form.reset('password', 'password_confirmation'),
+    // });
 };
 </script>
 
@@ -60,7 +61,7 @@ const submit = () => {
                         autocomplete="phone_number"
                     />
 
-                    <InputError class="mt-2" :message="form.errors.email" />
+                    <InputError class="mt-2" :message="form.errors.phone_number" />
                 </div>
 
                 <div class="mt-4">

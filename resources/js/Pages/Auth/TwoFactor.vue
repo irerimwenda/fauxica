@@ -28,7 +28,7 @@ import { Head, Link } from '@inertiajs/vue3';
                                 </span>
                             </Link>
 
-                            <Link :href="route('verify-otp')" class="bg-white border-2 border-primary-100 py-5 px-5 flex items-center gap-x-5 rounded-lg mb-10">
+                            <Link :href="route('verify-otp')" class="bg-white hover:bg-primary-100 border-2 border-primary-100 py-5 px-5 flex items-center gap-x-5 rounded-lg mb-10">
                                 <span class="block">
                                     <phone-icon/>
                                 </span>
