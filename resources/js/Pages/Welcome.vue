@@ -60,6 +60,33 @@ import GuestLayout from "@/Layouts/GuestLayout.vue";
                     </div>
                 </div>
             </div>
+
+           <hr class="my-10"/>
+
+           <div class="text-center">
+               <h1 class="text-3xl font-playfair mb-4">Our Products</h1>
+               <p class="text-lg font-light mb-11">Browse through a variety of our products available</p>
+           </div>
+
+           <div class="grid grid-cols-4 gap-x-4">
+                <div>
+                    <img src="/images/socks.png" alt="Handbag" class="mb-3 w-full"/>
+                    <h5 class="font-bold text-lg">Running Socks</h5>
+                    <p class="font-light mb-3">Size 2XL</p>
+                    <div class="flex justify-between mb-5">
+                        <div>
+                            <p class="font-light line-through text-gray-500 mb-1">Ksh 500</p>
+                            <p class="font-bold text-lg">Ksh 350</p>
+                        </div>
+
+                        <div>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded mb-1">Price dropped</span>
+                            <p class="font-light text-gray-700">You save Ksh 150</p>
+                        </div>
+                    </div>
+                    <button class="bg-primary-100 p-2.5 text-lg font-bold w-full">Add to Cart</button>
+                </div>
+           </div>
        </div>
    </guest-layout>
 </template>
