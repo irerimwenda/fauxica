@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -16,7 +17,8 @@ class HomePageController extends Controller
     {
         return Inertia::render('Welcome', [
             'canLogin' => Route::has('login'),
-            'canRegister' => Route::has('register')
+            'canRegister' => Route::has('register'),
+            'products' => Product::all()
         ]);
     }
 

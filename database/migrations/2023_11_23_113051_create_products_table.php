@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('img_path');
+            $table->string('size');
+            $table->float('original_price');
+            $table->float('discounted_price');
+            $table->float('new_price');
             $table->timestamps();
         });
     }

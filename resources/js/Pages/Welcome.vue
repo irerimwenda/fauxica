@@ -1,13 +1,20 @@
 <script setup>
 import GuestLayout from "@/Layouts/GuestLayout.vue";
+
+const props = defineProps({
+    products: {
+        type: Array,
+        required: true
+    }
+})
 </script>
 
 <template>
    <guest-layout>
        <Head title="Home" />
 
-       <div class="container mx-auto">
-            <div class="pt-24">
+       <div class="container mx-auto py-24">
+            <div>
                 <div class="grid grid-cols-2 gap-x-24">
                     <div>
                         <h1 class="text-5xl font-playfair leading-[64px] mb-11">Quality apparel <br class="hidden lg:block"/> without the pricing tag</h1>
@@ -68,20 +75,20 @@ import GuestLayout from "@/Layouts/GuestLayout.vue";
                <p class="text-lg font-light mb-11">Browse through a variety of our products available</p>
            </div>
 
-           <div class="grid grid-cols-4 gap-x-4">
-                <div>
-                    <img src="/images/socks.png" alt="Handbag" class="mb-3 w-full"/>
-                    <h5 class="font-bold text-lg">Running Socks</h5>
-                    <p class="font-light mb-3">Size 2XL</p>
+           <div class="grid grid-cols-4 gap-x-8 gap-y-11">
+                <div v-for="product in products" :key="product.id">
+                    <img :src="product.img_path" :alt="product.name" class="mb-3 w-full h-64 object-contain bg-primary-200 border border-primary-100"/>
+                    <h5 class="font-bold text-lg">{{ product.name }}</h5>
+                    <p class="font-light mb-3">{{ `Size ${product.size}` }}</p>
                     <div class="flex justify-between mb-5">
                         <div>
-                            <p class="font-light line-through text-gray-500 mb-1">Ksh 500</p>
-                            <p class="font-bold text-lg">Ksh 350</p>
+                            <p class="font-light line-through text-gray-500 mb-1">{{ `Ksh ${product.original_price}` }}</p>
+                            <p class="font-bold text-lg">{{ `Ksh ${product.new_price}` }}</p>
                         </div>
 
                         <div>
                             <span class="bg-yellow-100 text-yellow-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded mb-1">Price dropped</span>
-                            <p class="font-light text-gray-700">You save Ksh 150</p>
+                            <p class="font-light text-gray-700">{{ `You save Ksh ${product.discounted_price}` }}</p>
                         </div>
                     </div>
                     <button class="bg-primary-100 p-2.5 text-lg font-bold w-full">Add to Cart</button>
